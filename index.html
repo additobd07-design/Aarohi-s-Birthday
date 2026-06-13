@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শুভ জন্মদিন আরোহী! ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Hind+Siliguri:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6b81;
+            --secondary-color: #ffd1dc;
+            --text-color: #4a4a4a;
+            --dark-pink: #d81b60;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', sans-serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffd1dc 100%);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .bengali-title {
+            font-family: 'Galada', cursive;
+            color: var(--dark-pink);
+        }
+
+        /* Music Floating Button */
+        .music-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+ /* Top Banner Section */
+        .top-banner-container {
+            max-width: 1000px;
+            margin: 30px auto 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .top-banner {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(216, 27, 96, 0.1);
+            border: 2px solid rgba(255, 107, 129, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .top-banner:hover {
+            transform: translateY(-5px);
+        }
+
+        .top-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #6a6a6a;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 15px 25px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+        }
+
+        .time-box {
+            text-align: center;
+        }
+
+        .time-box span {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--dark-pink);
+        }
+
+        /* Story Section */
+        .story-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(216, 27, 96, 0.05);
+            line-height: 1.8;
+            font-size: 1.15rem;
+            text-align: justify;
+            border: 1px solid rgba(255, 107, 129, 0.2);
+        }
+
+        .story-container h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Memory Highlight Boxes */
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .memory-card {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .memory-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Wishes/Exam Section */
+        .wishes-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, transparent, rgba(255, 107, 129, 0.1));
+        }
+
+        .exam-note {
+            background: #fff;
+            display: inline-block;
+            padding: 20px 40px;
+            border-radius: 50px;
+            margin-top: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 2px dashed var(--primary-color);
+        }
+
+        /* Floating Hearts Animation */
+        .heart {
+            position: absolute;
+            color: rgba(255, 107, 129, 0.4);
+            font-size: 20px;
+            animation: float Up 5s linear infinite;
+            bottom: -20px;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.3rem; }
+            .story-container { padding: 20px; margin: 20px; text-align: left; }
+            .countdown { padding: 10px 15px; gap: 10px; }
+            .time-box span { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="bg-music" loop>
+        <source src="Ed Sheeran - Perfect  30 Second Video.mp3" type="audio/mpeg">
+    </audio>
+    <button class="music-btn" onclick="toggleMusic()">🎵 গানটি চালাও</button>
+
+    <div id="hearts-container"></div>
+ <div class="top-banner-container">
+        <div class="top-banner">
+            <img src="122.png" alt="জন্মদিনের বিশেষ ব্যানার পোস্টার">
+        </div>
+    </div>
+
+    <section class="hero">
+        <p>❤️ ১৭ই জুন — একটি বিশেষ দিন ❤️</p>
+        <h1>শুভ জন্মদিন, আরোহী!</h1>
+        <p>আমার প্রিয় "গুনগুন", তোমার জীবনের প্রতিটি মুহূর্ত হোক আনন্দে ঘেরা।</p>
+        
+        <div class="countdown" id="countdown">
+            <div class="time-box"><span id="days">00</span><br>দিন</div>
+            <div class="time-box"><span id="hours">00</span><br>ঘণ্টা</div>
+            <div class="time-box"><span id="minutes">00</span><br>মিনিট</div>
+            <div class="time-box"><span id="seconds">00</span><br>সেকেন্ড</div>
+        </div>
+    </section>
+
+    <section class="story-container">
+        <h2>আমাদের না বলা গল্পের শুরু... 📖</h2>
+        <p>
+            আমাদের পরিচয়টা খুব হুট করেই, ঠিক আমার প্রি-টেস্ট পরীক্ষার আগের দিনগুলোতে। একটা সময় ভালোবাসার ওপর থেকে আমার সব বিশ্বাস উঠে গিয়েছিল, জীবনের অতীত এক গল্প আমাকে খুব ভেঙে ফেলেছিল। ঠিক তখনই, আমার অনলাইন কবিতার পেজে হুট করে একটা নাম আমার চোখে পড়ে—<strong>"আরোহী ঘোষ"</strong>। আমার ভাঙা মনের প্রতিটা কবিতায় তোমার দেওয়া রিয়্যাকশনগুলো আমাকে আস্তে আস্তে এক অদ্ভুত ভালো লাগায় জড়িয়ে ফেলছিল।
+        </p>
+        <p>
+            একদিন তোমার ‘টিয়া পাখি’ (ম্যাঙ্গো) কে নিয়ে দেওয়া একটা স্টোরির রিপ্লাইতে আমাদের প্রথম আলাপ। তারপর কত দিন কেটে গেল! আমার অতীতের সব কষ্ট, সব কান্না যখন আমি তোমার কাছে উজার করে দিতাম, তুমি তখন একজন বন্ধুর চেয়েও বেশি যত্ন নিয়ে আমার পাশে দাঁড়িয়েছিলে। আমার পড়াশোনা থেকে শুরু করে স্বাস্থ্য—সবকিছুর খেয়াল রাখতে তুমি।
+        </p>
+        <p>
+            আজও মনে পড়ে ‘মুভিডা’ (Movida) রেস্টুরেন্টে আমাদের সেই প্রথম দেখা হওয়ার দিনটি। এরপর সরস্বতী পূজো কিংবা পহেলা বৈশাখের এক সাথে কাটানো রঙিন মুহূর্তগুলো... আমরা কতশত সুন্দর স্মৃতি জমিয়েছি এক সাথে! একদিন মনের সব কথা তোমাকে বলেই ফেললাম, আর তুমিও জানালে তোমার পছন্দের কথা। হয়তো আমাদের এই সম্পর্কের কোনো আনুষ্ঠানিক নাম নেই, আমরা এখনো একে অপরের প্রিয় বন্ধু, কিন্তু আমি জানি—আমি তোমাকে কতটা ভালোবাসি, আর তুমি আমাকে কতটা ভালোবাসো।
+        </p>
+
+        <div class="memory-grid">
+            <div class="memory-card">
+                <img src="IMG-20251202-WA0014.jpg" alt="মুভিডা রেস্টুরেন্ট">
+                <strong>প্রথম দেখা ☕</strong>
+                <p>মুভিডা রেস্টুরেন্টের সেই প্রথম বিকেল</p>
+            </div>
+            <div class="memory-card">
+                <img src="IMG-20260123-WA0201.jpg" alt="সরস্বতী পুজো">
+                <strong>উৎসবের রঙ 🌸</strong>
+                <p>সরস্বতী পূজোর একসাথে কাটানো মুহূর্ত</p>
+            </div>
+            <div class="memory-card">
+                <img src="IMG-20260415-WA0341.jpg" alt="পহেলা বৈশাখ">
+                <strong>বাঙালি সাজে 🌾</strong>
+                <p>পহেলা বৈশাখের সেই সুন্দর স্মৃতি</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="wishes-section">
+        <h2 style="font-size: 2.5rem;">জন্মদিনের অনেক অনেক শুভেচ্ছা! 🎂🎈</h2>
+        <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+            তুমি যেমন আছ, ঠিক তেমনই থেকো। জীবনের সবটুকু ভালো যেন তোমার ভাগ্যে জোটে, এই কামনাই করি।
+        </p>
+        
+        <div class="exam-note">
+            <h3 style="margin: 0 0 10px 0;">📚 আমাদের এইচএসসি (HSC) পরীক্ষা ২০২৬</h3>
+            <p style="margin: 0; font-size: 1.1rem;">
+                সামনে ২রা জুলাই আমাদের পরীক্ষা। আমি মনেপ্রাণে চাই, আমাদের দুজনের পরীক্ষাই যেন অনেক অনেক ভালো হয়। একসাথে এই বাধা পার হয়ে আমরা আরও সুন্দর স্মৃতির দিকে এগিয়ে যাবো। অল দ্য বেস্ট, গুনগুন! 
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>তোমার জন্য অনেক ভালোবাসা সহ — তোমার বিশেষ কেউ এক জন ❤️</p>
+    </footer>
+
+    <script>
+        // Countdown Timer for June 17
+        function updateCountdown() {
+            const currentYear = new Date().getFullYear();
+            const birthdayTime = new Date(`June 17, ${currentYear} 00:00:00`).getTime();
+            const now = new Date().getTime();
+            let diff = birthdayTime - now;
+
+            // If birthday passed this year, count for next year
+            if (diff < 0) {
+                diff = new Date(`June 17, ${currentYear + 1} 00:00:00`).getTime() - now;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerHTML = days < 10 ? '0' + days : days;
+            document.getElementById('hours').innerHTML = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerHTML = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerHTML = seconds < 10 ? '0' + seconds : seconds;
+        }
+        setInterval(updateCountdown, 1000);
+
+        // Music Toggle function
+        function toggleMusic() {
+            const music = document.getElementById('bg-music');
+            const btn = document.querySelector('.music-btn');
+            if (music.paused) {
+                music.play();
+                btn.innerHTML = "⏸️ গানটি বন্ধ করো";
+            } else {
+                music.pause();
+                btn.innerHTML = "🎵 গানটি চালাও";
+            }
+        }
+
+        // Floating Hearts Maker
+        function createHeart() {
+            const container = document.getElementById('hearts-container');
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+            heart.style.fontSize = Math.random() * 15 + 15 + 'px';
+            container.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        setInterval(createHeart, 400);
+    </script>
+</body>
+</html>
